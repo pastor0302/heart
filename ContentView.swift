@@ -1,25 +1,33 @@
-//
-//  ContentView.swift
-//  Heart APP
-//
-//  Created by sermacbook_14 on 7/2/24.
-//
-
 import SwiftUI
 import SwiftData
 
 struct ContentView: View {
     var body: some View {
-        TabView{
-                HomeScreen()
-                    .tabItem{
-                        Image(systemName: "square")
-                            Color.black
-                        Text("Sign In")
-            }
-        }
+            WelcomeScreenView()
     }
 }
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
+
+struct PrimaryButton: View {
+    var title: String
+    var body: some View {
+            Text(title)
+                .font(.title3)
+                .fontWeight(.bold)
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(Color.red)
+                .cornerRadius(50)
+        }
+}
+
+
 #Preview{
     ContentView()
 }
